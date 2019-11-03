@@ -1,0 +1,6 @@
+.avatar {
+	@extend .img-sm;
+	
+	border-radius: 50%;
+	object-fit: cover;
+}

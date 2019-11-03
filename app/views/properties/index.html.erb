@@ -1,0 +1,35 @@
+<div class="row no-gutters">
+  <div class="col-7">
+    <div class="bg-white border-top border-light p-3">
+      <input type="text" placeholder="search">
+    </div>
+    <div class="row p-4">
+      <% @properties.each do |property| %>
+        <div class="col-6 mb-4">
+          <%= render property %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+
+  <div class="col-5">
+    <div
+      id="map"
+      style="
+        width: 600px;
+        height: 100vh;
+        position: sticky !important;
+        top: 0;
+        right: 0;
+      "
+      data-markers="<%= [{
+        lat: 50.845190,
+        lng: 4.355122,
+        infoWindow: render(partial: 'info_window', locals: { property: @properties.first }),
+        image_url: asset_url('logcabin.svg')
+      }].to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    ></div>
+  </div>
+</div>

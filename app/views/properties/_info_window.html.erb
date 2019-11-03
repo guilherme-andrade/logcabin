@@ -1,0 +1,18 @@
+<div>
+  <%= cl_image_tag(property.photo,
+    class: 'card-img-top', crop: :fill, alt: 'proerty.name', style: 'height: 150px') %>
+  <div class="card-body">
+    <h5 class="card-title">
+      <%= property.name %>
+    </h5>
+    <p class="card-text mb-1">
+      <%= property.address %>
+    </p>
+    <p class="card-text text-primary">
+      name of owner here!
+    </p>
+    <%= link_to 'Show', property, class: 'text-dark' %>
+    <%= link_to 'Edit', edit_property_path(property), class: 'text-warning' %>
+    <%= link_to 'Destroy', property, method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-danger' %>
+  </div>
+</div>

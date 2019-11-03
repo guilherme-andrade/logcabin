@@ -1,0 +1,19 @@
+<%= link_to 'Back', properties_path %>
+
+<%= cl_image_tag @property.photo,
+								 class: 'd-block w-100 my-4',
+								 crop: :fill,
+								 alt: 'proerty.name',
+								 style: 'height: 400px'
+%>
+
+<h1>
+  <%= @property.name %>
+</h1>
+
+<p>
+  <%= @property.address %>
+</p>
+
+<%= link_to 'Edit', edit_property_path(@property), class: 'btn btn-warning' %>
+<%= link_to 'Delete', property_path(@property), method: :delete, class: 'btn btn-danger' %>

@@ -1,0 +1,31 @@
+.mapboxgl-popup {
+  max-width: none !important;
+  width: 350px;
+  padding: $spacer;
+
+
+	// compiles to selector .mapboxgl-popup-close-button
+  &-close-button {
+		color: $white;
+		font-size: $font-size-lg;
+		content: '&#xD7';
+		font-weight: $font-weight-lighter;
+  }
+
+	// compiles to selector .mapboxgl-popup-content
+	&-content {
+		width: 100%;
+	  font-family: $font;
+	  padding: 0;
+
+	  h5 {
+	  	font-size: $h5-font-size;
+	  }
+
+	  p,
+	  a,
+	  button {
+			font-size: $font-size-base;
+	  }
+	}
+}

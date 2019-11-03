@@ -1,17 +1,18 @@
 source 'https://rubygems.org'
 ruby '2.6.0'
 
+gem 'autoprefixer-rails'
 gem 'bootsnap', require: false
-gem 'jbuilder', '~> 2.0'
+gem 'carrierwave', '~> 1.2'
+gem 'cloudinary', '~> 1.9.1'
+gem 'font-awesome-sass', '~> 5.6.1'
+gem 'inline_svg'
 gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '5.2.3'
 gem 'redis'
-
-gem 'autoprefixer-rails'
-gem 'font-awesome-sass', '~> 5.6.1'
-gem 'sassc-rails'
 gem 'simple_form'
+gem 'turbolinks', '~> 5.2.0'
 gem 'uglifier'
 gem 'webpacker'
 
