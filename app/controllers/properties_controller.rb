@@ -18,6 +18,7 @@ class PropertiesController < ApplicationController
 
   def create
     @property = Property.new(property_params)
+    @property.user = current_user
 
     if @property.save
       redirect_to @property, notice: "'#{@property.name}' was successfully created."
