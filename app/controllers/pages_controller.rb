@@ -1,7 +1,9 @@
 class PagesController < ApplicationController
+	skip_before_action :authenticate_user!
+
   def home; end
 
   def profile
-  	@properties = Property.all
+  	@properties = current_user.properties
   end
 end

@@ -14,7 +14,7 @@
             <%= property.address %>
           </p>
           <p class="card-text text-primary">
-            name of owner here!
+            <%= property.user.email if property.user %>
           </p>
           <%= link_to 'Show', property, class: 'text-dark' %>
           <%= link_to 'Edit', edit_property_path(property), class: 'text-warning' %>
