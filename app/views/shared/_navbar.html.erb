@@ -9,9 +9,15 @@
 
   <%# TODO: show user only if logged in %>
   <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-    <%= link_to 'Create a Property!', new_property_path, class: 'text-primary px-4' %>
+    <%= link_to 'Create a Property!', new_property_path, class: 'text-primary px-4 d-none d-lg-block' %>
+    
+    <%# TODO: should direct to editing account %>
+    <%= link_to 'Create a Property!', new_property_path, class: 'py-2 text-center d-block d-lg-none' %>
+    <%= link_to 'profile', profile_path, class: 'py-2 text-center d-block d-lg-none' %>
+    <%= link_to 'my account <should direct to editing account>', profile_path, class: 'py-2 text-center d-block d-lg-none' %>
+    <%= link_to 'logout', '', method: :delete, class: 'py-2 text-center d-block d-lg-none font-weight-bold' %>
 
-    <div class="dropdown">
+    <div class="dropdown d-none d-lg-block">
       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <span class="mr-4">
           <%# TODO: should display the user's name %>
@@ -25,7 +31,7 @@
         <%# TODO: should direct to editing account %>
         <%= link_to 'my account <should direct to editing account>', profile_path, class: 'dropdown-item' %>
         <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">log out</a>
+        <%= link_to 'logout', '', method: :delete, class: 'dropdown-item' %>
       </div>
     </div>
   </div>
