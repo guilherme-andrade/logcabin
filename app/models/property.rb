@@ -1,5 +1,4 @@
 class Property < ApplicationRecord
-	# TODO: should belong to a user
 	belongs_to :user
 
 	mount_uploader :photo, PhotoUploader

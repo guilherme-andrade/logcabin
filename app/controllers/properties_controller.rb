@@ -2,23 +2,32 @@ class PropertiesController < ApplicationController
   before_action :set_property, only: [:show, :edit, :update, :destroy]
 
   def index
-    @properties = Property.all
+    @properties = policy_scope(Property)
+
+    authorize @properties
     render layout: 'simple'
   end
 
   def show
+    authorize @property
   end
 
   def new
     @property = Property.new
+    authorize @property
   end
 
   def edit
+    if current_user != @property.user
+      redirect_to @property
+    end
   end
 
   def create
     @property = Property.new(property_params)
     @property.user = current_user
+
+    authorize @property
 
     if @property.save
       redirect_to @property, notice: "'#{@property.name}' was successfully created."
@@ -37,6 +46,7 @@ class PropertiesController < ApplicationController
 
   def destroy
     @property.destroy
+    authorize @property
     redirect_to properties_url, notice: "'#{@property.name}' was successfully destroyed."
   end
 

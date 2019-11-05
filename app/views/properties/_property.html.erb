@@ -9,12 +9,16 @@
       <%= property.address %>
     </p>
     <p class="card-text text-primary">
-      
-      <%# TODO: the user name should go here %>
-      <%= property.user.email if property.user %>
+      <%= property.user.name if property.user %>
     </p>
     <%= link_to 'Show', property, class: 'text-dark' %>
-    <%= link_to 'Edit', edit_property_path(property), class: 'text-warning' %>
-    <%= link_to 'Destroy', property, method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-danger' %>
+
+    <% if policy(property).edit? %>
+      <%= link_to 'Edit', edit_property_path(property), class: 'text-warning' %>
+    <% end %>
+
+    <% if policy(property).destroy? %>
+      <%= link_to 'Delete', property_path(property), method: :delete, class: 'text-danger' %>
+<% end %>
   </div>
 </div>

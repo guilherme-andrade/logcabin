@@ -6,10 +6,12 @@ gem 'bootsnap', require: false
 gem 'carrierwave', '~> 1.2'
 gem 'cloudinary', '~> 1.9.1'
 gem 'devise'
+gem 'faker'
 gem 'font-awesome-sass', '~> 5.6.1'
 gem 'inline_svg'
 gem 'pg', '~> 0.21'
 gem 'puma'
+gem 'pundit'
 gem 'rails', '5.2.3'
 gem 'redis'
 gem 'simple_form'
@@ -18,6 +20,7 @@ gem 'uglifier'
 gem 'webpacker'
 
 group :development do
+  gem 'colorize'
   gem 'web-console', '>= 3.3.0'
 end
 
