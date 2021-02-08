@@ -3,7 +3,7 @@ ruby '2.6.0'
 
 gem 'autoprefixer-rails'
 gem 'bootsnap', require: false
-gem 'carrierwave', '~> 1.2'
+gem 'carrierwave', '~> 1.3'
 gem 'cloudinary', '~> 1.9.1'
 gem 'devise'
 gem 'faker'
